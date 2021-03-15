@@ -1,0 +1,16 @@
+[[package]]
+category = "main"
+description = "Python 3 compatible Pytohn 2 `random` Module."
+name = "random2"
+optional = false
+python-versions = "*"
+version = "1.0.1"
+
+[metadata]
+content-hash = "357d4117029e86b24c3002bad5f8f7a8ff62999d1218250748dd851bf4147137"
+python-versions = "^3.8"
+
+[metadata.files]
+random2 = [
+    {file = "random2-1.0.1.zip", hash = "sha256:34ad30aac341039872401595df9ab2c9dc36d0b7c077db1cea9ade430ed1c007"},
+]
