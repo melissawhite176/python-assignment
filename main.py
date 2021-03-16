@@ -653,3 +653,183 @@ except FileNotFoundError:
   print("file does not exist!")
   #when to not use try-except: if there is no error/exception to catch and no need to handle them
   
+
+
+
+
+
+# OOP
+# Class
+  #Can you have more than one class in a file? Yes
+
+class Dog:
+  def __init__(self, name, age):
+    self.name = name
+    self.age = age
+  
+  def bark(self):
+    print('Woof!')
+
+  def displayDog(self):
+    print('dog name:', self.name, 'age:', self.age)
+  
+dog1 = Dog('Buddy', 2)
+dog1.displayDog()
+dog1.bark()
+
+class Bird:
+  def __init__(self, name, age):
+    self.name = name
+    self.age = age
+  
+  def tweet(self):
+    print('Tweet!')
+
+  def displayBird(self):
+    print('bird name:', self.name, 'age:', self.age)
+  
+bird1 = Bird('Tweety', 3)
+bird1.displayBird()
+bird1.tweet()
+
+  #Can multiple objects be created from the same class? Yes
+bird2 = Bird('Polly', 1)
+bird2.displayBird()
+bird2.tweet()
+
+  #Can objects create classes? -objects are created from classes
+  #Using the code above, create another object
+dog2 = Dog('Poochie', 4)
+dog2.displayDog()
+
+  #Add a method to the class: location()
+class NewBird:
+  def __init__(self, name, age, place):
+    self.name = name
+    self.age = age
+    self.place = place
+  def tweet(self):
+    print('Tweet!')
+
+  def displayBird(self):
+    print('bird name:', self.name, 'age:', self.age)
+  
+  def location(self):
+    print(self.name, 'is located at', self.place)
+
+bird3 = NewBird('Precious', 2, 'Brazil')
+bird3.displayBird()
+bird3.location()
+
+
+
+
+
+
+# Getter and Setter
+  #Add a variable age and create a getter and setter
+class NewDog:
+  def __init__(self):
+    self.age = "None"
+  
+  def getAge(self):
+    return self.age
+  
+  def setAge(self, age):
+    self.age = age
+
+Frank = NewDog()
+Frank.setAge(6)
+print(Frank.age)
+
+  #Why would you use getter and setter methods? To encapsulate data
+
+
+
+
+# Modules
+import math
+print(math.sin(5))
+
+import myModule
+myModule.snake()
+
+
+
+
+#Inheritance
+class App:
+  def start(self):
+    print('starting')
+
+class Apple(App):
+  def getVersion(self):
+    print('Apple version')
+
+app = Apple()
+app.start()
+app.getVersion()
+
+
+class Cookie:
+  def __init__(self, texture):
+    self.texture = texture
+
+class Brownie: 
+  def __init__(self, flavor):
+    self.flavor = flavor
+
+class CookieBrownie(Cookie, Brownie):
+  def __init__(self, texture, flavor):
+    Cookie.__init__(self, texture)
+    Brownie.__init__(self, flavor)
+  
+  def displayDessert(self):
+    print('flavor:', self.flavor, 'texture:', self.texture)
+
+dessert = CookieBrownie('soft', 'chocolate-chip')
+dessert.displayDessert()
+
+
+
+
+# Static method
+  #Can a method inside a class be called without creating an object? Yes, with static method
+
+class Player:
+  @staticmethod
+  def teamChant():
+    print("Go Gators!")
+  
+  def qbChant(self):
+    print("Let's go!")
+  
+  def lbChant(self):
+    print('We got this!')
+
+Player.teamChant()
+quarterback = Player()
+quarterback.qbChant()
+
+  #Why does not everybody like static methods? "orthogonal to OOP and may indicate bad design"
+
+
+
+
+# Iterable 
+  #What is an iterable? A Python object that can be used as a sequence and iterated through
+
+  #Which types of data can be used with an iterable? Lists, strings, dictionaries, and sets
+
+# Class method
+  #What is a classmethod? A method that's shared among all objects. They can be called from instances and from the class itself
+
+  #How does a classmethod differ from a static method? The class method gets the clas when the method is called and knows about the classes attributs and methods. The static method knowns nothing about the class or instance and you can just as well use a function call. Both don't need an object to be instantiated
+
+# Multiple Ineritance 
+  #Do all programming languages support multiple inheritance? No, not all languages
+
+  #Why would you not use multiple inheritance? It may increase complexity and could be more difficult to reuse code 
+
+  #Is there a limit to the number of classes you can inherit from? No limit
+
